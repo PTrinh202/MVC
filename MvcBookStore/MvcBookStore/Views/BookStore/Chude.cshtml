@@ -1,0 +1,12 @@
+﻿@model IEnumerable<MvcBookStore.Models.CHUDE>
+
+
+    @foreach (var item in Model)
+    {
+<div>
+    <a href='@Url.Action("SPTheochude", "BookStore", new { id = item.MaCD})'>
+        @item.TenChuDe
+    </a>
+</div>
+    }
+

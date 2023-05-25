@@ -1,0 +1,9 @@
+﻿@model IEnumerable<MvcBookStore.Models.NHAXUATBAN>
+
+@foreach (var nhaxuatban in Model)
+{
+<div>
+    <a href='@Url.Action("SPTheoNXB", "BookStore", new {id = nhaxuatban.MaNXB})'>
+        @nhaxuatban.TenNXB
+    </a>
+</div>}

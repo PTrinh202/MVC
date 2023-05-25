@@ -1,0 +1,190 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NICE</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="~/images/favicon.ico" />
+    <link rel="stylesheet" href="~/Content/style1.css" type="text/css" media="all" />
+    
+    <script type="text/javascript" src="~/Scripts/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.jcarousel.min.js"></script>
+    <!--[if IE 6]>
+        <script type="text/javascript" src="js/png-fix.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="~/Scripts/functions.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <div id="header" class="shell">
+        <div id="logo"><h1><a href="#">BestSeller</a></h1><span><a href="#">OK</a></span></div>
+        <!-- Navigation -->
+        <div id="navigation">
+            <ul>
+                <li>@Html.ActionLink("TRANG CHỦ", "Index", "BookStore")</li>
+                <li>@Html.ActionLink("ĐĂNG KÝ", "Dangky", "Nguoidung")</li>
+                <li>@Html.ActionLink("ĐĂNG NHẬP", "Dangnhap", "Nguoidung")</li>
+                <li>@Html.ActionLink("GIỎ HÀNG", "GiohangPartial", "GioHang")</li>
+            </ul>
+        </div>
+        <!-- End Navigation -->
+        <div class="cl">&nbsp;</div>
+        <!-- Login-details -->
+        <div id="login-details">
+            <p>Welcome, <a href="#" id="user">Guest</a> .</p><p><a href="#" class="cart"><img src="~/img/cart-icon.png" alt="" /></a>Shopping Cart (0) <a href="#" class="sum">$0.00</a></p>
+        </div>
+        <!-- End Login-details -->
+    </div>
+    <!-- End Header -->
+    <!-- Slider -->
+    <div id="slider">
+        <div class="shell">
+            <ul>
+                <li>
+                    <div class="image">
+                        <center>
+                            <img src="~/images/mot-minh-song-trong-rung.jpg" width="250" height="350" />
+                        </center>
+                    </div>
+                    <div class="details">
+                        <h2>Bestsellers</h2>
+                        <h3>Special Offers</h3>
+                        <p class="title">WALDEN - MỘT MÌNH SỐNG TRONG RỪNG</p>
+                        <p class="description">Lĩnh vực đề cử: Sách cho người trẻ do cộng đồng sách trẻ bình chọn</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="image">
+                        <center>
+                            <img src="~/images/767.jpeg" width="250" height="350"/>
+                        </center>
+                    </div>
+                    <div class="details">
+                        <h2>Bestsellers</h2>
+                        <h3>Special Offers</h3>
+                        <p class="title">BÀ BOVARY</p>
+                        <p class="description">Lĩnh vực đề cử: Văn học</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="image">
+                        <center>
+                            <img src="~/images/dostoyevski.jpg" width="250" height="350" />
+                        </center>
+                    </div>
+                    <div class="details">
+                        <h2>Bestsellers</h2>
+                        <h3>Special Offers</h3>
+                        <p class="title">ANH EM NHÀ KARAMAZOV</p>
+                        <p class="description">Lĩnh vực đề cử: Văn học</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="image">
+                        <center>
+                            <img src="~/images/11_1_6_135635.jpg" width="250" height="350"/>
+                        </center>
+                    </div>
+                    <div class="details">
+                        <h2>Bestsellers</h2>
+                        <h3>Special Offers</h3>
+                        <p class="title">BỐ GIÀ</p>
+                        <p class="description">Lĩnh vực đề cử: Văn học</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="nav">
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+            </div>
+        </div>
+    </div>
+    <!-- End Slider -->
+    <!-- Main -->
+    <div id="main" class="shell">
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <ul class="categories">
+                <li>
+                    <h4>CHỦ ĐỀ</h4>
+                    <ul>
+                        @Html.Action("Chude", "BookStore")
+                    </ul>
+                </li>
+            
+            <li>
+                <h4>NHÀ XUẤT BẢN</h4>
+                <ul>
+                @Html.Action("Nhaxuatban", "BookStore")
+                </ul>
+            </li>
+            </ul>
+        </div>
+        <!-- End Sidebar -->
+        <!-- Content -->
+        <div id="content">
+            <!-- Products -->
+            <div class="products">
+                <h3></h3>
+                <ul>
+                        <div>
+                        @RenderBody()
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- End Products -->
+            </div>
+            <div class="cl">&nbsp;</div>
+            <!-- Best-sellers -->
+            <div id="best-sellers">
+                
+                
+            </div>
+            <!-- End Best-sellers -->
+        </div>
+        <!-- End Content -->
+        <div class="cl">&nbsp;</div>
+    </div>
+    <!-- End Main -->
+    <!-- Footer -->
+    <div id="footer" class="shell">
+        <div class="top">
+            <div class="cnt">
+                <div class="col about">
+                    <h4>About BestSellers</h4>
+                    <p>Nulla porttitor pretium mattis. Mauris lorem massa, ultricies non mattis bibendum, semper ut erat. Morbi vulputate placerat ligula. Fusce <br />convallis, nisl a pellentesque viverra, ipsum leo sodales sapien, vitae egestas dolor nisl eu tortor. Etiam ut elit vitae nisl tempor tincidunt. Nunc sed elementum est. Phasellus sodales viverra mauris nec dictum. Fusce a leo libero. Cras accumsan enim nec massa semper eu hendrerit nisl faucibus. Sed lectus ligula, consequat eget bibendum eu, consequat nec nisl. In sed consequat elit. Praesent nec iaculis sapien. <br />Curabitur gravida pretium tincidunt.  </p>
+                </div>
+                <div class="col store">
+                    <h4>Store</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Special Offers</a></li>
+                        <li><a href="#">Log In</a></li>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Basket</a></li>
+                        <li><a href="#">Checkout</a></li>
+                    </ul>
+                </div>
+                <div class="col" id="newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Lorem ipsum dolor sit amet  consectetur. </p>
+                    <form action="" method="post">
+                        <input type="text" class="field" value="Your Name" title="Your Name" />
+                        <input type="text" class="field" value="Email" title="Email" />
+                        <div class="form-buttons"><input type="submit" value="Submit" class="submit-btn" /></div>
+                    </form>
+                </div>
+                <div class="cl">&nbsp;</div>
+                <div class="copy">
+                    <p>&copy; <a href="#">BestSeller.com</a>. Design by <a href="http://css-free-templates.com/">CSS-FREE-TEMPLATES.COM</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer -->
+</body>
+</html>
